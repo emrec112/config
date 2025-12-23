@@ -1,0 +1,127 @@
+
+@import "phrolovalight.css";
+
+* {
+  font-family: Symbols Nerd Font, Overpass Nerd Font;
+  font-size: 16px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  margin: 5px;
+}
+
+#workspaces {
+  font-weight: bold;
+  border-radius: 5rem;
+  margin: 5px;
+  margin-left: 0.5rem;
+  background-color: @surface0;
+  padding:0 0.7rem;
+}
+
+#workspaces button {
+  color: @darkred;
+  border-radius: 5rem;
+  border: none;
+}
+
+#workspaces button.active {
+  color: @lightorange;
+  border-radius: 5rem;
+}
+
+#workspaces button:hover {
+  color: @darkorange;
+  border-radius: 5rem;
+}
+
+#tray,
+#custom-brightnessctl,
+#battery,
+#pulseaudio,
+#custom-power,
+#network,
+#custom-lock,
+#custom-weather,
+#clock{
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+  background-color: @surface0;
+}
+
+#custom-music-play,
+#custom-music-prev,
+#custom-music-next{
+  background-color: @surface0;
+  padding: 0.5rem 1rem;
+  margin: 5px 0px;
+  color: @darkorange;
+}
+
+#custom-music-prev {
+  border-radius: 5rem 0 0 5rem;
+}
+
+#custom-music-next{
+ border-radius: 0 5rem 5rem 0;
+}
+
+#clock{
+  color: @lightorange;
+  border-radius: 0 5rem 5rem 0;
+}
+
+#custom-weather{
+  border-radius: 5rem 0 0 5rem;
+  color: @lightorange;
+}
+
+#network {
+  border-radius: 5rem 0 0 5rem;
+  color: @darkred;
+}
+
+#battery {
+  color: @darkorange;
+}
+
+#battery.charging {
+  color: @red;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#custom-brightnessctl {
+  color: @lightorange;
+  border-radius: 0;
+}
+
+#pulseaudio {
+  color: @darkorange;
+  margin-left: 0;
+  padding-left: 2rem;
+}
+
+#custom-lock {
+  color: @darkorange;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 2rem;
+}
+
+#custom-power {
+  border-radius: 0 5rem 5rem 0;
+  color: @red;
+  margin-left: 0;
+  margin-right: 0.5rem;
+  padding-left: 2rem;
+}
+
+#tray {
+  margin-right: 0;
+  padding-left: 2rem;
+}
