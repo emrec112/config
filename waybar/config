@@ -1,0 +1,137 @@
+// Derived from https://github.com/rubyowo/dotfiles/
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 47,
+  "modules-left": ["hyprland/workspaces", "custom/music-prev","custom/music-play", "custom/music-next"],
+  "modules-center": ["custom/weather", "clock"],
+  "modules-right": ["network", "pulseaudio", "custom/brightnessctl", "battery","tray", "custom/lock", "custom/power"],
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "custom/bluetooth": {
+    "format": "󰂯", // bluetooth icon
+    "tooltip": "Bluetooth cihazlarını yönet",
+    "on-click": "blueberry",
+    "interval": 0
+  },
+  "network": {
+    "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "interval": 3,
+    "on-click": "gnome-system-monitor -r"
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "format" : "󰖩"
+  },
+  "custom/music-prev": {
+    "format": "{}",
+    "interval": 1,
+    "exec": "~/.config/waybar/music-prev.sh",
+    "on-click": "playerctl -p spotify previous",
+    "tooltip": false
+  },
+  "custom/music-play": {
+    "format": "{}",
+    "escape": true,
+    "interval": 1,
+    "tooltip": true,
+    "exec": "~/.config/waybar/music.sh",
+    "on-click": "playerctl -p spotify play-pause",
+    //"on-scroll-up": "~/.config/waybar/volume.sh spotify +0.25%",
+    //"on-scroll-down": "~/.config/waybar/volume.sh spotify -0.25%",
+    "max-length": 20
+  },
+  "custom/music-next": {
+    "format": "{}",
+    "interval": 1,
+    "on-click": "playerctl -p spotify next",
+    "exec": "~/.config/waybar/music-next.sh",
+    "tooltip": false
+  },
+  "custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --lang tr --location Ankara",
+    "return-type": "json"
+  },
+  "clock": {
+    "timezone": "Asia/İstanbul",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m/%Y}",
+    "format": " {:%H:%M:%S}",
+    "interval": 1,
+    "on-click-right": "gnome-calendar"
+  },
+  "custom/brightnessctl": {
+    "device": "intel_backlight",
+    "exec": "/home/emrecc/.config/waybar/brightness.sh",
+    "return-type": "json",
+    "interval": 1,
+    "on-scroll-up": "brightnessctl -d intel_backlight set +1%",
+    "on-scroll-down": "brightnessctl -d intel_backlight set 1%-",
+    "format": "{icon} {percentage}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} %{capacity}",
+    "format-charging": "󰂄 %{capacity}",
+    "format-plugged": "󰂄",
+    //        "format-alt": "{icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "on-click": ".config/waybar/powerprofiles.sh"
+  },
+  "pulseaudio": {
+    //"scroll-step": 1, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol"
+  },
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
+    "format": ""
+  },
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "nwg-bar",
+    "format": "⏻"
+  },
+  "custom/launcher": {
+    "format": "",
+    "on-click": "fuzzel --show drun",
+    "tooltip": false
+  },
+  "custom/left-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-light": {
+    "format": "",
+    "tooltip": false
+  }
+}

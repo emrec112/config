@@ -1,0 +1,1 @@
+--log-level: debug: argument must be one of 'none', 'error', 'warning', 'info'
