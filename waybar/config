@@ -4,15 +4,24 @@
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 47,
   "modules-left": ["hyprland/workspaces", "custom/music-prev","custom/music-play", "custom/music-next"],
-  "modules-center": ["custom/weather", "clock"],
-  "modules-right": ["network", "pulseaudio", "custom/brightnessctl", "battery","tray", "custom/lock", "custom/power"],
+  "modules-center": ["custom/dunst", "clock"],
+  "modules-right": ["custom/system-monitor", "pulseaudio", "custom/brightnessctl", "battery","tray", "custom/lock", "custom/power"],
   "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{icon}", // Sayı yerine sadece ikonu gösterir
+    "on-click": "activate",
     "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
       "4": [],
       "5": []
+    },
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "persistent": ""
     }
   },
   "custom/bluetooth": {
@@ -21,9 +30,8 @@
     "on-click": "blueberry",
     "interval": 0
   },
-  "network": {
-    "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
-    "interval": 3,
+  "custom/system-monitor": {
+    "format": "",
     "on-click": "gnome-system-monitor -r"
   },
   "tray": {
@@ -62,6 +70,14 @@
     "interval": 3600,
     "exec": "wttrbar --lang tr --location Ankara",
     "return-type": "json"
+  },
+  "custom/dunst": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "/home/emrecc/.config/waybar/dunst_status.sh",
+    "on-click": "/home/emrecc/.config/waybar/dunst.sh",
+    "restart-interval": 1,
+    "signal": 1
   },
   "clock": {
     "timezone": "Asia/İstanbul",

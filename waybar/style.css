@@ -40,9 +40,10 @@ border-radius: 5rem;
 #battery,
 #pulseaudio,
 #custom-power,
-#network,
+#custom-system-monitor,
 #custom-lock,
 #custom-weather,
+#custom-dunst,
 #clock{
   padding: 0.5rem 1rem;
   margin: 5px 0;
@@ -76,9 +77,14 @@ border-radius: 5rem;
   color: @lightorange;
 }
 
-#network {
+#custom-system-monitor{
   border-radius: 5rem 0 0 5rem;
   color: @darkred;
+}
+
+#custom-dunst{
+  border-radius: 5rem 0 0 5rem;
+  color: @lightorange;
 }
 
 #battery {
@@ -119,7 +125,7 @@ color: @red;
   padding-left: 2rem;
 }
 
-#tray {
+#tray{
   margin-right: 0;
   padding-left: 2rem;
 }
