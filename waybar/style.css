@@ -10,31 +10,35 @@
   background: transparent;
   margin: 5px;
 }
-
 #workspaces {
-  font-weight: bold;
-  border-radius: 5rem;
-  margin: 5px;
-  background-color: @surface0;
-  padding:0 0.7rem;
+font-weight: bold;
+border-radius: 5rem;
+margin: 5px;
+background-color: @surface0;
+padding: 0 0.7rem;
 }
 
 #workspaces button {
-  color: @darkred;
-  border-radius: 5rem;
-  border: none;
+color: @darkred;
+border-radius: 5rem;
+border: none;
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+padding: 0 6px;
+margin: 0 2px;
 }
 
 #workspaces button.active {
-  color: @lightorange;
-  border-radius: 5rem;
+color: @lightorange;
+border-radius: 5rem;
+font-size: 18px;
+padding: 0 10px;
 }
 
 #workspaces button:hover {
 color: @darkorange;
 border-radius: 5rem;
+background-color: rgba(255, 255, 255, 0.1);
 }
-
 #tray,
 #custom-brightnessctl,
 #battery,
