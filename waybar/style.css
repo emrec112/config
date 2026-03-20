@@ -1,4 +1,4 @@
-@import "phrolovadark.css";
+@import "reze-colors.css";
 
 * {
   font-family: "Maple Mono NF";
@@ -7,9 +7,10 @@
 }
 
 #waybar {
-  background: transparent;
-  margin: 5px;
+background: transparent;
+margin: 5px;
 }
+
 #workspaces {
 font-weight: bold;
 border-radius: 5rem;
@@ -19,7 +20,7 @@ padding: 0 0.7rem;
 }
 
 #workspaces button {
-color: @darkred;
+color: @reze-hair;
 border-radius: 5rem;
 border: none;
 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -28,17 +29,18 @@ margin: 0 2px;
 }
 
 #workspaces button.active {
-color: @lightorange;
+color: @reze-eyes;
 border-radius: 5rem;
 font-size: 18px;
 padding: 0 10px;
 }
 
 #workspaces button:hover {
-color: @darkorange;
+color: @reze-skin;
 border-radius: 5rem;
-background-color: rgba(255, 255, 255, 0.1);
+background-color: rgba(255, 255, 255, 0.05);
 }
+
 #tray,
 #custom-brightnessctl,
 #battery,
@@ -48,88 +50,83 @@ background-color: rgba(255, 255, 255, 0.1);
 #custom-lock,
 #custom-weather,
 #custom-dunst,
-#clock{
-  padding: 0.5rem 1rem;
-  margin: 5px 0;
-  background-color: @surface0;
+#clock {
+padding: 0.5rem 1rem;
+margin: 5px 0;
+background-color: @surface0;
 }
 
 #custom-music-play,
 #custom-music-prev,
-#custom-music-next{
-  background-color: @surface0;
-  padding: 0.5rem 1rem;
-  margin: 5px 0px;
-  color: @darkorange;
+#custom-music-next {
+background-color: @surface0;
+padding: 0.5rem 1rem;
+margin: 5px 0px;
+color: @reze-hair;
 }
 
-#custom-music-prev {
-  border-radius: 5rem 0 0 5rem;
+#custom-music-prev { border-radius: 5rem 0 0 5rem; }
+#custom-music-next { border-radius: 0 5rem 5rem 0; }
+
+#clock {
+color: @reze-eyes;
+border-radius: 0 5rem 5rem 0;
 }
 
-#custom-music-next{
-  border-radius: 0 5rem 5rem 0;
+#custom-weather {
+border-radius: 5rem 0 0 5rem;
+color: @reze-apron;
 }
 
-#clock{
-  color: @lightorange;
-  border-radius: 0 5rem 5rem 0;
+#custom-system-monitor {
+border-radius: 5rem 0 0 5rem;
+color: @reze-eyes;
 }
 
-#custom-weather{
-  border-radius: 5rem 0 0 5rem;
-  color: @lightorange;
-}
-
-#custom-system-monitor{
-  border-radius: 5rem 0 0 5rem;
-  color: @darkred;
-}
-
-#custom-dunst{
-  border-radius: 5rem 0 0 5rem;
-  color: @lightorange;
+#custom-dunst {
+border-radius: 5rem 0 0 5rem;
+color: @reze-eyes;
 }
 
 #battery {
-  color: @darkorange;
+color: @reze-hair;
 }
 
 #battery.charging {
-  color: @red;
+color: @reze-eyes;
 }
 
 #battery.warning:not(.charging) {
-color: @red;
+color: @reze-red;
 }
 
 #custom-brightnessctl {
-  color: @lightorange;
-  border-radius: 0;
+color: @reze-apron;
+border-radius: 0;
 }
 
 #pulseaudio {
-  color: @darkorange;
-  margin-left: 0;
-  padding-left: 2rem;
+color: @reze-hair;
+margin-left: 0;
+padding-left: 1.5rem;
 }
 
 #custom-lock {
-  color: @darkorange;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 2rem;
+color: @reze-hair;
+margin-left: 0;
+margin-right: 0;
+padding-left: 1.5rem;
 }
 
 #custom-power {
-  border-radius: 0 5rem 5rem 0;
-  color: @red;
-  margin-left: 0;
-  margin-right: 0.5rem;
-  padding-left: 2rem;
+border-radius: 0 5rem 5rem 0;
+color: @reze-red;
+margin-left: 0;
+margin-right: 0.5rem;
+padding-left: 1.5rem;
 }
 
-#tray{
-  margin-right: 0;
-  padding-left: 2rem;
+#tray {
+margin-right: 0;
+padding-left: 1.5rem;
 }
